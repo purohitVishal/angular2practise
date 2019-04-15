@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "jhon",
+    "gender": "male"
+  },
+  {
+    "id": 2,
+    "name": "China",
+    "gender": "male"
+  },
+  {
+    "id": 3,
+    "name": "Rohan",
+    "gender": "male"
+  },
+  {
+    "id": 4,
+    "name": "chris",
+    "gender": "female"
+  }
+]

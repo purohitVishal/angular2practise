@@ -1,0 +1,39 @@
+<hr/>
+
+<div class="container">
+	<h2> Form Builder Validation </h2>	
+	<form [formGroup]="userForm" (ngSubmit)="submitFnc()">
+		<div class="form-group" >
+			<label>name</label>
+			<input type="text" class="form-control" formControlName="name" >
+		</div>
+		<div *ngIf="userForm.controls['name'].hasError('required')" class="alert alert-danger" >
+			Please enter a name
+		</div>
+		
+		<div class="form-group">
+			<label>email</label>
+			<input type="text" class="form-control" formControlName="email">
+		</div>
+		<div *ngIf="userForm.controls['email'].hasError('minlength')" class="alert alert-danger">
+			Please enter atleast 5 characters
+		</div>
+		<div formGroupName="address">
+			<div class="form-group">
+				<label>city</label>
+				<input type="text" class="form-control" formControlName="city">
+			</div>
+			<div class="form-group">
+				<label>postal code</label>
+				<input type="number" class="form-control" formControlName="postalCode">
+			</div>
+			<div *ngIf="userForm.controls['address'].controls['postalCode'].hasError('pattern')" class="alert alert-danger">
+				Number must be atleast 5 digits				
+			</div>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+
+	</form>
+
+</div>
